@@ -1,10 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import './Header.css';
 
 const Header = () => {
-  const navigate = useNavigate();
   return (
     <header>
       <h1>
@@ -12,8 +11,10 @@ const Header = () => {
       </h1>
       <nav>
         <div>
-          <span onClick={() => navigate('/')}>Поиск Вакансий</span>
-          <span onClick={() => navigate('/favorites')}>Избранное</span>
+          <NavLink exact to="/">
+            Поиск Вакансий
+          </NavLink>
+          <NavLink to="/favorites">Избранное</NavLink>
         </div>
       </nav>
     </header>

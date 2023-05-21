@@ -5,7 +5,7 @@
 }
 
 :root {
-  --white: #acadb9;
+  --white: #ffffff;
   --grey-100: #f5f5f6;
   --grey-200: #eaebed;
   --grey-300: #d5d6dc;
@@ -21,4 +21,12 @@
 }
 
 .vacancies_page {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.search__cards {
+  width: 773px;
+  height: 660px;
 }

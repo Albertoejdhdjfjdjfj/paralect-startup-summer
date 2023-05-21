@@ -47,3 +47,12 @@ header > nav > div {
   display: flex;
   justify-content: space-between;
 }
+
+header > nav > div > a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.active_route {
+  color: var(--blue-500);
+}
