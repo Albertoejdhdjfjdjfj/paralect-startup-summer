@@ -1,21 +1,22 @@
 import React from 'react';
 import { pasrePayments } from '../../assets/functions/functions';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import star from '../../assets/images/star.svg';
 import point from '../../assets/images/point.svg';
 import location from '../../assets/images/location.svg';
 import './Vacancies.css';
 
 const Vacancies = ({ data }) => {
-  const navigate=useNavigate();
-  
+  const navigate = useNavigate();
+
   return (
     <div className="vacancies">
       {data &&
         data.map((item) => (
           <div key={item.id}>
             <p>
-              <span onClick={()=>navigate(`/${item.id}`)}>{item.profession}</span> <img src={star} />
+              <span onClick={() => navigate(`/${item.id}`)}>{item.profession}</span>{' '}
+              <img src={star} />
             </p>
             <div>
               <span>з/п {pasrePayments(item.payment_from, item.payment_to, item.currency)}</span>

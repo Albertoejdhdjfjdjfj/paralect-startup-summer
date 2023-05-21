@@ -64,3 +64,17 @@ export function pasrePayments(from, to, currency) {
 
   return `${to} ${currency}`;
 }
+
+export async function getVacancy(id) {
+  const vacancy = await fetch(host + `/2.0/vacancies/${id}/`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-secret-key': x_secret_key,
+      Authorization: 'Bearer ' + Cookies.get('token'),
+      'X-Api-App-Id': x_api_app_id
+    }
+  });
+
+  return await vacancy.json();
+}
