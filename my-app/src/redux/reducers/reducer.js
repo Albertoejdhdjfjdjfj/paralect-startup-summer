@@ -1,6 +1,7 @@
 import {
   SET_FILTER,
   SET_SEARCH,
+  SET_NUM_PAGE,
   RESET_ALL,
   REQUEST_VACANCIES,
   REQUEST_VACANCIES_SUCCESS,
@@ -17,6 +18,7 @@ const initialState = {
     salary_from: null,
     salary_to: null
   },
+  page: 1,
   vacancies: false,
   branches: []
 };
@@ -27,6 +29,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, filter: action.payload };
     case SET_SEARCH:
       return { ...state, search: action.payload };
+    case SET_NUM_PAGE:
+      return { ...state, page: action.payload };
     case RESET_ALL:
       return { ...state, filter: initialState.filter };
     case REQUEST_VACANCIES:

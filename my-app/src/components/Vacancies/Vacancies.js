@@ -2,7 +2,6 @@ import React from 'react';
 import { parsePayments } from '../../assets/functions/functions';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from '../../assets/hooks/hooks';
-import star from '../../assets/images/star.svg';
 import point from '../../assets/images/point.svg';
 import location from '../../assets/images/location.svg';
 import './Vacancies.css';

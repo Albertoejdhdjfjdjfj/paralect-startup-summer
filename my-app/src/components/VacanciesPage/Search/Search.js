@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setSearch, fetchVacancies } from '../../../redux/actions/actions';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../../../redux/actions/actions';
 import search from '../../../assets/images/search.svg';
 import './Search.css';
 
 const Search = () => {
-  const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
   const [text, setText] = useState('');
 
   const dispatchText = () => {
-    dispatch(fetchVacancies({ filter: filter, search: text, numPage: 1 }));
     dispatch(setSearch(text));
   };
+
+  useEffect(() => {
+    dispatch(setSearch(''));
+  }, []);
 
   return (
     <div className="search">

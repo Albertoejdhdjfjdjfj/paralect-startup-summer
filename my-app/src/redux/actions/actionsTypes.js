@@ -1,5 +1,6 @@
 export const SET_FILTER = 'SET_FILTER';
 export const SET_SEARCH = 'SET_SEARCH';
+export const SET_NUM_PAGE = 'SET_NUM_PAGE';
 export const RESET_ALL = 'RESET_ALL';
 export const FETCH_VACANCIES = 'FETCH_VACANCIES';
 export const REQUEST_VACANCIES = 'REQUEST_VACANCIES';

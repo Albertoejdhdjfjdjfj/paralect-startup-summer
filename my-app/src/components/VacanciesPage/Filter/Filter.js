@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter, resetAll } from '../../../redux/actions/actions';
-import { fetchVacancies } from '../../../redux/actions/actions';
 import reset from '../../../assets/images/reset.svg';
 import './Filter.css';
 
@@ -12,28 +11,9 @@ const Filter = () => {
 
   const dispatch = useDispatch();
   const branches = useSelector((state) => state.branches);
-  const search = useSelector((state) => state.search);
 
   const applyFilters = () => {
-    dispatch(
-      setFilter({
-        branch: branch,
-        salaryFrom: salaryFrom,
-        salaryTo: salaryTo
-      })
-    );
-
-    dispatch(
-      fetchVacancies({
-        filter: {
-          branch: branch,
-          salaryFrom: salaryFrom,
-          salaryTo: salaryTo
-        },
-        search: search,
-        numPage: 1
-      })
-    );
+    dispatch(setFilter({ branch: branch, salaryFrom: salaryFrom, salaryTo: salaryTo }));
   };
 
   const cleanFilters = () => {
@@ -41,17 +21,6 @@ const Filter = () => {
     setSalaryFrom(null);
     setSalaryTo(null);
     dispatch(resetAll());
-    dispatch(
-      fetchVacancies({
-        filter: {
-          branch: branch,
-          salaryFrom: salaryFrom,
-          salaryTo: salaryTo
-        },
-        search: search,
-        numPage: 1
-      })
-    );
     document.querySelector('.filter select').value = 'option1';
     document.querySelectorAll('.filter input').forEach((input) => (input.value = ''));
   };

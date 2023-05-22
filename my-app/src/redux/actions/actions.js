@@ -2,6 +2,7 @@ import { createAction } from 'redux-actions';
 import {
   SET_FILTER,
   SET_SEARCH,
+  SET_NUM_PAGE,
   RESET_ALL,
   FETCH_VACANCIES,
   REQUEST_VACANCIES,
@@ -15,6 +16,7 @@ import {
 
 export const setFilter = createAction(SET_FILTER);
 export const setSearch = createAction(SET_SEARCH);
+export const setNumPage = createAction(SET_NUM_PAGE);
 export const resetAll = createAction(RESET_ALL);
 export const fetchVacancies = createAction(FETCH_VACANCIES);
 export const requestVacancies = createAction(REQUEST_VACANCIES);

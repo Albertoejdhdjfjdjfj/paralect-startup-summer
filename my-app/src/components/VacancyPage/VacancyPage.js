@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { useVacancy } from '../../assets/hooks/hooks';
+import { useVacancy, useLocalStorage } from '../../assets/hooks/hooks';
 import { parsePayments } from '../../assets/functions/functions';
-import star from '../../assets/images/star.svg';
 import point from '../../assets/images/point.svg';
 import location from '../../assets/images/location.svg';
 import './VacancyPage.css';
 
 const VacancyPage = () => {
   const [vacancy, setVacancy] = useVacancy();
-
+  const [favorites, addFavorites, deleteFavorites] = useLocalStorage();
   useEffect(() => {
     setVacancy();
   }, []);
@@ -18,7 +17,17 @@ const VacancyPage = () => {
       <div className="vacancy">
         <div>
           <p>
-            <span>{vacancy.profession}</span> <img src={star} />
+            <span>{vacancy.profession}</span>
+            <a
+              onClick={() =>
+                favorites.some((el) => el.id === vacancy.id)
+                  ? deleteFavorites(vacancy)
+                  : addFavorites(vacancy)
+              }
+              className={
+                favorites.some((el) => el.id === vacancy.id) ? 'active_vacancy' : 'unactive_vacancy'
+              }
+            ></a>
           </p>
           <div>
             <span>
