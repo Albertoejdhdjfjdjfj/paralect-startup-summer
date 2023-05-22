@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBranches, fetchVacancies } from '../../redux/actions/actions';
+import { fetchBranches, fetchVacancies, resetAll, setSearch } from '../../redux/actions/actions';
 import { getToken } from '../../assets/functions/functions';
 import Cookies from 'js-cookie';
 import Search from './Search/Search';
@@ -10,15 +10,17 @@ import './VacanciesPage.css';
 
 const VacanciesPage = () => {
   const vacancies = useSelector((state) => state.vacancies);
-  const search = useSelector((state) => state.search);
-  const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
   const dispatchVacancies = () => {
     dispatch(
       fetchVacancies({
-        filter: filter,
-        search: search,
+        filter: {
+          branch: '',
+          salary_from: null,
+          salary_to: null
+        },
+        search: '',
         numPage: 1
       })
     );
@@ -30,6 +32,8 @@ const VacanciesPage = () => {
         await getToken();
       }
       dispatch(fetchBranches());
+      dispatch(resetAll());
+      dispatch(setSearch(''));
       dispatchVacancies();
     }
     checkToken();

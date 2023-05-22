@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter, resetAll } from '../../../redux/actions/actions';
-import { fetchBranches, fetchVacancies } from '../../../redux/actions/actions';
+import { fetchVacancies } from '../../../redux/actions/actions';
 import reset from '../../../assets/images/reset.svg';
 import './Filter.css';
 
@@ -18,8 +18,8 @@ const Filter = () => {
     dispatch(
       setFilter({
         branch: branch,
-        salary_from: salaryFrom,
-        salary_to: salaryTo
+        salaryFrom: salaryFrom,
+        salaryTo: salaryTo
       })
     );
 
@@ -36,15 +36,31 @@ const Filter = () => {
     );
   };
 
-  useEffect(() => {
-    dispatch(fetchBranches());
-  }, []);
+  const cleanFilters = () => {
+    setBranch('');
+    setSalaryFrom(null);
+    setSalaryTo(null);
+    dispatch(resetAll());
+    dispatch(
+      fetchVacancies({
+        filter: {
+          branch: branch,
+          salaryFrom: salaryFrom,
+          salaryTo: salaryTo
+        },
+        search: search,
+        numPage: 1
+      })
+    );
+    document.querySelector('.filter select').value = 'option1';
+    document.querySelectorAll('.filter input').forEach((input) => (input.value = ''));
+  };
 
   return (
     <div className="filter">
       <span>
         <p>Фильтры</p>{' '}
-        <button onClick={() => dispatch(resetAll())}>
+        <button onClick={cleanFilters}>
           Сбросить все <img src={reset} />
         </button>
       </span>

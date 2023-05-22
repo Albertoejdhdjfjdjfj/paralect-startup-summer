@@ -55,7 +55,7 @@ export async function getVacancies(filter, search, numPage = 1) {
   return res.objects;
 }
 
-export function pasrePayments(from, to, currency) {
+export function parsePayments(from, to, currency) {
   if (from > 0 && to > 0) {
     return `${from} - ${to} ${currency}`;
   } else if (from > 0 && to === 0) {

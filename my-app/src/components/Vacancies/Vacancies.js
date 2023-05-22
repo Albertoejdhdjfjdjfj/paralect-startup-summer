@@ -1,12 +1,14 @@
 import React from 'react';
-import { pasrePayments } from '../../assets/functions/functions';
+import { parsePayments } from '../../assets/functions/functions';
 import { useNavigate } from 'react-router-dom';
+import { useLocalStorage } from '../../assets/hooks/hooks';
 import star from '../../assets/images/star.svg';
 import point from '../../assets/images/point.svg';
 import location from '../../assets/images/location.svg';
 import './Vacancies.css';
 
 const Vacancies = ({ data }) => {
+  const [favorites, addFavorites, deleteFavorites] = useLocalStorage();
   const navigate = useNavigate();
 
   return (
@@ -16,10 +18,19 @@ const Vacancies = ({ data }) => {
           <div key={item.id}>
             <p>
               <span onClick={() => navigate(`/${item.id}`)}>{item.profession}</span>{' '}
-              <img src={star} />
+              <a
+                onClick={() =>
+                  favorites.some((el) => el.id === item.id)
+                    ? deleteFavorites(item)
+                    : addFavorites(item)
+                }
+                className={
+                  favorites.some((el) => el.id === item.id) ? 'active_vacancy' : 'unactive_vacancy'
+                }
+              ></a>
             </p>
             <div>
-              <span>з/п {pasrePayments(item.payment_from, item.payment_to, item.currency)}</span>
+              <span>з/п {parsePayments(item.payment_from, item.payment_to, item.currency)}</span>
               <img src={point} />
               <p>{item.type_of_work.title}</p>
             </div>

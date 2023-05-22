@@ -1,92 +1,103 @@
 * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: 'Inter';
-     font-style: normal;
-   }
-   
-   :root {
-     --white: #ffffff;
-     --grey-100: #f5f5f6;
-     --grey-200: #eaebed;
-     --grey-300: #d5d6dc;
-     --grey-500: #acadb9;
-     --grey-600: #7b7c88;
-     --black: #232134;
-     --blue-600: #3b7cd3;
-     --blue-500: #5e96fc;
-     --blue-400: #92c1ff;
-     --blue-300: #b7d6ff;
-     --blue-200: #c9e0ff;
-     --blue-100: #deecff;
-     --radius-20: 20px;
-     --radius-8: 8px;
-   }
-   
-   .vacancies {
-     width: 100%;
-     height: 137px;
-   }
-   
-   .vacancies > div {
-     width: 100%;
-     height: 137px;
-     padding: 24px 24px 24px 24px;
-   }
-   
-   .vacancies > div > p {
-     width: 100%;
-     display: flex;
-     justify-content: space-between;
-   }
-   
-   .vacancies > div > p > span {
-     font-weight: 600;
-     font-size: 20px;
-     color: var(--blue-500);
-   }
-   
-   .vacancies > div > p > img {
-     width: 22px;
-     height: 22px;
-   }
-   
-   .vacancies > div > div {
-     display: flex;
-     align-items: center;
-     margin-top: 12px;
-   }
-   
-   .vacancies > div > div > img {
-     margin: 0 12px 0 12px;
-   }
-   
-   .vacancies > div > div > span {
-     font-weight: 700;
-     font-size: 16px;
-     display: flex;
-     align-items: center;
-   }
-   
-   .vacancies > div > div > p {
-     font-weight: 400;
-     font-size: 16px;
-   }
-   
-   .vacancies > div > span {
-     margin-top: 12px;
-     display: flex;
-   }
-   
-   .vacancies > div > span > img {
-     width: 13px;
-     height: 16px;
-   }
-   
-   .vacancies > div > span > p {
-     margin-left: 11px;
-     font-weight: 400;
-     font-size: 16px;
-   }
-   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+  font-style: normal;
+}
+
+:root {
+  --white: #ffffff;
+  --grey-100: #f5f5f6;
+  --grey-200: #eaebed;
+  --grey-300: #d5d6dc;
+  --grey-500: #acadb9;
+  --grey-600: #7b7c88;
+  --black: #232134;
+  --blue-600: #3b7cd3;
+  --blue-500: #5e96fc;
+  --blue-400: #92c1ff;
+  --blue-300: #b7d6ff;
+  --blue-200: #c9e0ff;
+  --blue-100: #deecff;
+  --radius-20: 20px;
+  --radius-8: 8px;
+}
+
+.vacancy {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vacancy > div {
+  width: 50%;
+  height: 157px;
+  padding: 24px 24px 24px 24px;
+  margin-top: 40px;
+}
+
+.vacancy > div > p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.vacancy > div > p > span {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--blue-500);
+}
+
+.vacancy > div > p > img {
+  width: 22px;
+  height: 22px;
+}
+
+.vacancy > div > div {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.vacancy > div > div > img {
+  margin: 0 12px 0 12px;
+}
+
+.vacancy > div > div > span {
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.vacancy > div > div > p {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.vacancy > div > span {
+  margin-top: 12px;
+  display: flex;
+}
+
+.vacancy > div > span > img {
+  width: 13px;
+  height: 16px;
+}
+
+.vacancy > div > span > p {
+  margin-left: 11px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.vacancy > span {
+  width: 50%;
+  padding: 4px 24px 24px 24px;
+}
+.vacancy > span > p {
+  font-weight: 400;
+  font-size: 16px;
+}
