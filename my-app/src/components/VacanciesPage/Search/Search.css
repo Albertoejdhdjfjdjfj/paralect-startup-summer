@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color:  #F7F7F8;
+body {
+  background-color: #f7f7f8;
 }
 
 :root {
@@ -51,7 +51,7 @@ body{
   border: none;
   width: 80%;
   font-weight: 500;
-font-size: 14px;
+  font-size: 14px;
 }
 
 .search > input:active,
@@ -74,7 +74,7 @@ font-size: 14px;
   align-items: center;
   font-weight: 500;
   font-size: 14px;
-} 
+}
 
 .focus_search {
   margin-top: 40px;
@@ -100,7 +100,8 @@ font-size: 14px;
   border: none;
   width: 80%;
   font-weight: 500;
-font-size: 14px;
+  font-size: 14px;
+  caret-color: var(--blue-500);
 }
 
 .focus_search > input:active,
@@ -123,15 +124,14 @@ font-size: 14px;
   align-items: center;
   font-weight: 500;
   font-size: 14px;
-} 
+}
 
-@media(max-width:900px){
+@media (max-width: 900px) {
   .search {
     margin-top: 16px;
   }
 
-  .focus_search{
+  .focus_search {
     margin-top: 16px;
   }
-
 }

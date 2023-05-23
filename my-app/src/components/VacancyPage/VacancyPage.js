@@ -14,11 +14,11 @@ const VacancyPage = () => {
     setVacancy();
   }, []);
 
-  return ( 
-     
-      <div className="vacancy">
-        {!vacancy&&<Loader/>}
-       { vacancy && <div>
+  return (
+    <div className="vacancy">
+      {!vacancy && <Loader />}
+      {vacancy && (
+        <div>
           <p>
             <span>{vacancy.profession}</span>
             <a
@@ -44,12 +44,10 @@ const VacancyPage = () => {
             <p>{vacancy.town.title}</p>
           </span>
         </div>
-}
-        {vacancy&&<span dangerouslySetInnerHTML={{ __html: vacancy.vacancyRichText }}></span>}
-
-      </div>
-    )
-  
+      )}
+      {vacancy && <span dangerouslySetInnerHTML={{ __html: vacancy.vacancyRichText }}></span>}
+    </div>
+  );
 };
 
 export default VacancyPage;

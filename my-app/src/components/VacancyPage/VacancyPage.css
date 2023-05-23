@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color:  #F7F7F8;
+body {
+  background-color: #f7f7f8;
 }
 
 :root {
@@ -33,7 +33,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:  #F7F7F8;
+  background-color: #f7f7f8;
   padding-bottom: 51px;
 }
 
@@ -43,7 +43,7 @@ body{
   margin-top: 40px;
   background-color: var(--white);
   border: 1px solid var(--grey-200);
-border-radius: 12px;
+  border-radius: 12px;
 }
 
 .vacancy > div > p {
@@ -106,14 +106,15 @@ border-radius: 12px;
   margin-top: 20px;
   background-color: var(--white);
   border: 1px solid var(--grey-200);
-border-radius: 12px;
+  border-radius: 12px;
 }
-.vacancy > span > p,ul {
+.vacancy > span > p,
+ul {
   font-weight: 400;
   font-size: 16px;
 }
 
-@media(max-width:900px){
+@media (max-width: 900px) {
   .vacancy {
     padding: 0 10px 51px 10px;
   }
@@ -128,32 +129,32 @@ border-radius: 12px;
     align-items: flex-start;
     margin-top: 12px;
   }
-  
-  .vacancy > div{
-     width:100%;
+
+  .vacancy > div {
+    width: 100%;
   }
 
   .vacancy > div > div > img {
     display: none;
   }
-  
+
   .vacancy > div > div > p {
     margin-top: 10px;
   }
-  
+
   .vacancies > div > span {
     margin-top: 12px;
     display: flex;
   }
-  
+
   .vacancy > div > span > img {
     width: 13px;
     height: 16px;
   }
-  
+
   .vacancy > div > span > p {
     margin-left: 11px;
     font-weight: 400;
     font-size: 16px;
-  } 
+  }
 }

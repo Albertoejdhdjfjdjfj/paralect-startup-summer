@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color:  #F7F7F8;
+body {
+  background-color: #f7f7f8;
 }
 
 :root {
@@ -40,8 +40,8 @@ body{
   padding: 24px 24px 24px 24px;
   background-color: var(--white);
   border: 1px solid var(--grey-200);
-border-radius: 12px;
-margin-top: 16px;
+  border-radius: 12px;
+  margin-top: 16px;
 }
 
 .vacancies > div > p {
@@ -115,8 +115,7 @@ margin-top: 16px;
   font-size: 16px;
 }
 
-@media(max-width:900px){
-
+@media (max-width: 900px) {
   .vacancies > div > div {
     display: flex;
     flex-direction: column;
@@ -124,33 +123,32 @@ margin-top: 16px;
     align-items: flex-start;
     margin-top: 12px;
   }
-  
-  .vacancies > div{
-     width:100%;
+
+  .vacancies > div {
+    width: 100%;
   }
 
   .vacancies > div > div > img {
     display: none;
   }
-  
+
   .vacancies > div > div > p {
     margin-top: 10px;
   }
-  
+
   .vacancies > div > span {
     margin-top: 12px;
     display: flex;
   }
-  
+
   .vacancies > div > span > img {
     width: 13px;
     height: 16px;
   }
-  
+
   .vacancies > div > span > p {
     margin-left: 11px;
     font-weight: 400;
     font-size: 16px;
-  } 
-  
+  }
 }

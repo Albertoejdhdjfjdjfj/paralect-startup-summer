@@ -4,7 +4,7 @@ import { useLocalStorage, useLocalStoragePagination } from '../../assets/hooks/h
 import Pagination from '../../assets/components/Pagination/Pagination';
 import Vacancies from '../Vacancies/Vacancies';
 import EmptyFavorites from './helpers/EmptyFavorites';
-import './FavoritesPage.css'
+import './FavoritesPage.css';
 
 const FavoritesPage = () => {
   const [favorites] = useLocalStorage();

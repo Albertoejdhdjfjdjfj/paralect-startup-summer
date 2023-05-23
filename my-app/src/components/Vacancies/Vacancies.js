@@ -5,7 +5,7 @@ import { useLocalStorage } from '../../assets/hooks/hooks';
 import Loader from '../../assets/components/Loader/Loader';
 import point from '../../assets/images/point.svg';
 import location from '../../assets/images/location.svg';
-import './Vacancies.css'; 
+import './Vacancies.css';
 
 const Vacancies = ({ data }) => {
   const [favorites, addFavorites, deleteFavorites] = useLocalStorage();
@@ -16,10 +16,11 @@ const Vacancies = ({ data }) => {
       {!data && <Loader />}
       {data &&
         data.map((item) => (
-          <div key={item.id}>
+          <div key={item.id} data-elem={`vacancy-${item.id}`}>
             <p>
               <span onClick={() => navigate(`/${item.id}`)}>{item.profession}</span>{' '}
               <a
+                data-elem={`vacancy-${item.id}-shortlist-button`}
                 onClick={() =>
                   favorites.some((el) => el.id === item.id)
                     ? deleteFavorites(item)

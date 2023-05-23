@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setNumPage } from '../../../redux/actions/actions';
-import {useDisplay} from '../../hooks/hooks'
 import forward from '../../images/arrow_forward.svg';
 import back from '../../images/arrow_back.svg';
 import './Pagination.css';
@@ -12,7 +11,7 @@ const Pagination = ({ length }) => {
   const [num, setNum] = useState(1);
 
   const dispatch = useDispatch();
-  const numPage=useSelector((state)=>state.page)
+  const numPage = useSelector((state) => state.page);
 
   const handlePage = (page) => {
     if (length >= page && page > 0) {
@@ -22,7 +21,9 @@ const Pagination = ({ length }) => {
   };
 
   const handleButtonRight = () => {
-    if (right < (length-(num)*3) * 40) {setRight(right + 40)}
+    if (right < (length - num * 3) * 40) {
+      setRight(right + 40);
+    }
   };
 
   const handleButtonLeft = () => {
@@ -31,16 +32,19 @@ const Pagination = ({ length }) => {
 
   useEffect(() => {
     dispatch(setNumPage(1));
-    length / 4 < 1 ? '' : setNum(Math.ceil(length / 4 ));
-  }, []); 
+    length / 4 < 1 ? '' : setNum(Math.ceil(length / 4));
+  }, []);
 
   useEffect(() => {
-    setPage(numPage)
+    setPage(numPage);
   }, [numPage]);
- 
+
   return (
     <div className="pagination">
-      <div onClick={handleButtonLeft} style={right > 0?{}:{opacity:0.5}}> <img src={back}/></div>
+      <div onClick={handleButtonLeft} style={right > 0 ? {} : { opacity: 0.5 }}>
+        {' '}
+        <img src={back} />
+      </div>
       <span>
         <div style={{ right: `${right}px` }}>
           <div>
@@ -56,7 +60,12 @@ const Pagination = ({ length }) => {
           </div>
         </div>
       </span>
-      <div onClick={handleButtonRight} style={right < (length-(num)*3) * 40?{}:{opacity:0.5}}><img src={forward}/></div>
+      <div
+        onClick={handleButtonRight}
+        style={right < (length - num * 3) * 40 ? {} : { opacity: 0.5 }}
+      >
+        <img src={forward} />
+      </div>
     </div>
   );
 };

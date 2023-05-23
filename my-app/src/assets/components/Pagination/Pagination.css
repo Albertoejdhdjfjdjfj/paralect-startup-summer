@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color:  #F7F7F8;
+body {
+  background-color: #f7f7f8;
 }
 
 :root {
@@ -75,12 +75,12 @@ body{
   border: 1px solid var(--grey-300);
   border-radius: var(--radius-8);
   font-family: 'Roboto';
-font-weight: 400;
-font-size: 16px;
-background-color: var(--white);
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--white);
 }
 
-.pagination > span > div > div >.active_page {
+.pagination > span > div > div > .active_page {
   background-color: var(--blue-500);
   color: var(--white);
 }

@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color:  #F7F7F8;
+body {
+  background-color: #f7f7f8;
 }
 
 :root {
@@ -33,7 +33,7 @@ body{
   padding: 0 11.25vw 0 11.25vw;
   display: flex;
   justify-content: space-between;
-  background-color:  #F7F7F8;
+  background-color: #f7f7f8;
   padding-bottom: 44px;
 }
 
@@ -45,22 +45,21 @@ body{
   align-items: center;
 }
 
-.search__cards>.vacancies >div {
+.search__cards > .vacancies > div {
   max-width: 53.6vw;
 }
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .vacancies_page {
     flex-direction: column;
     padding: 0 10px 44px 10px;
   }
-  
+
   .search__cards {
     width: 100%;
   }
 
-  .search__cards>.vacancies >div {
+  .search__cards > .vacancies > div {
     max-width: 100%;
   }
-  
 }

@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetAll, fetchBranches, fetchVacancies,setNumPage } from '../../../redux/actions/actions';
+import {
+  resetAll,
+  fetchBranches,
+  fetchVacancies,
+  setNumPage
+} from '../../../redux/actions/actions';
 import Select from '../../../assets/components/Select/Select';
 import SalaryFrom from '../../../assets/components/Salary/SalaryFrom';
 import SalaryTo from '../../../assets/components/Salary/SalaryTo';
@@ -14,7 +19,13 @@ const Filter = () => {
 
   const cleanFilters = () => {
     dispatch(resetAll());
-    dispatch(fetchVacancies({ filter: {branch:'',salaryFrom: null,salaryTo: null}, search: search, numPage: 1 }));
+    dispatch(
+      fetchVacancies({
+        filter: { branch: '', salaryFrom: null, salaryTo: null },
+        search: search,
+        numPage: 1
+      })
+    );
     dispatch(setNumPage(1));
   };
 
@@ -41,8 +52,10 @@ const Filter = () => {
         <span>Оклад</span>
         <SalaryFrom />
         <SalaryTo />
-        <button onClick={applyFiltes}>Применить</button>
-      </div> 
+        <button data-elem="search-button" onClick={applyFiltes}>
+          Применить
+        </button>
+      </div>
     </div>
   );
 };

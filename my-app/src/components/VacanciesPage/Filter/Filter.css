@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color:  #F7F7F8;
+body {
+  background-color: #f7f7f8;
 }
 
 :root {
@@ -93,13 +93,12 @@ body{
   justify-content: center;
 }
 
-@media(max-width:900px){
+@media (max-width: 900px) {
   .filter {
     max-width: 100%;
   }
-  
+
   .filter > div > button {
     width: 100%;
   }
-  
 }

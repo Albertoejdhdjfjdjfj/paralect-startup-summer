@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color:  #F7F7F8;
+body {
+  background-color: #f7f7f8;
 }
 
 :root {
@@ -105,7 +105,7 @@ body{
   margin-top: 8px;
 }
 
-.select_options > div:hover{
+.select_options > div:hover {
   background-color: var(--blue-100);
 }
 
@@ -116,11 +116,11 @@ body{
   font-size: 14px;
 }
 
-.select_options >.active_option:hover{
+.select_options > .active_option:hover {
   background-color: var(--blue-500);
 }
 
-@media(max-width:900px){
+@media (max-width: 900px) {
   .select {
     width: 100%;
     margin-top: 8px;

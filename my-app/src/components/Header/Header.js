@@ -9,7 +9,7 @@ const Header = () => {
   const isActive = (path) => {
     if (location.pathname === path) {
       return true;
-    } 
+    }
     return false;
   };
 
@@ -20,19 +20,17 @@ const Header = () => {
         <h1>Jobored</h1>
       </div>
       <nav>
-          <a className={isActive('/') ? 'active_link' : ''} onClick={() => navigate('/')}>
-            Поиск Вакансий
-          </a>
-          <a
-            className={isActive('/favorites') ? 'active_link' : ''}
-            onClick={() => navigate('/favorites')}
-          >
-            Избранное
-          </a>
+        <a className={isActive('/') ? 'active_link' : ''} onClick={() => navigate('/')}>
+          Поиск Вакансий
+        </a>
+        <a
+          className={isActive('/favorites') ? 'active_link' : ''}
+          onClick={() => navigate('/favorites')}
+        >
+          Избранное
+        </a>
       </nav>
-      <div>
-        
-      </div>
+      <div></div>
     </header>
   );
 };

@@ -32,7 +32,8 @@ const SalaryFrom = () => {
   return (
     <div className={focus ? 'focus_input' : ' input'}>
       <input
-        value={filter.salaryFrom?value:''}
+        data-elem="salary-from-input"
+        value={filter.salaryFrom ? value : ''}
         onFocus={changeFocus}
         onBlur={changeFocus}
         onChange={handleChange}

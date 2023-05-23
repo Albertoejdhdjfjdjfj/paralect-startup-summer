@@ -23,7 +23,13 @@ const Select = () => {
   return (
     <div className="select">
       <div onClick={changeActive} className={active ? 'active_select_field' : 'select_field'}>
-        {filter.branch === '' ? <p className="default_option">Выберете отрасль </p> : branchName}
+        {filter.branch === '' ? (
+          <p data-elem="industry-select" className="default_option">
+            Выберете отрасль{' '}
+          </p>
+        ) : (
+          branchName
+        )}
         <img src={active ? arrow_up : arrow_down} />
       </div>
       {active && (
