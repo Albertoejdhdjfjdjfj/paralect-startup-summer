@@ -44,7 +44,7 @@ const Filter = () => {
         <p>Фильтры</p>{' '}
         <button onClick={cleanFilters}>
           Сбросить все <img src={reset} />
-        </button>
+         </button>
       </span>
       <div>
         <span>Отрасль</span>

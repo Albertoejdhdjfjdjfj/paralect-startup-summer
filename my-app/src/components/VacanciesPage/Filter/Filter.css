@@ -60,6 +60,7 @@ body {
   color: var(--grey-500);
   display: flex;
   align-items: center;
+  margin-right: 4px;
 }
 
 .filter > span > button > img {
@@ -91,6 +92,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.filter > div > button:hover{
+  background-color: var(--blue-400);
 }
 
 @media (max-width: 900px) {

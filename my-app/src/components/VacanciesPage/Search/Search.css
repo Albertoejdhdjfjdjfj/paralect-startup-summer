@@ -76,6 +76,10 @@ body {
   font-size: 14px;
 }
 
+.search>button:hover{
+  background-color: var(--blue-400);
+}
+
 .focus_search {
   margin-top: 40px;
   width: 100%;
@@ -124,6 +128,10 @@ body {
   align-items: center;
   font-weight: 500;
   font-size: 14px;
+}
+
+.focus_search>button:hover{
+  background-color: var(--blue-400);
 }
 
 @media (max-width: 900px) {
