@@ -99,7 +99,6 @@ body {
 .select_options > div {
   padding: 8px 12px;
   width: 100%;
-  min-height: 36px;
   border-radius: var(--radius-8);
   font-weight: 400;
   font-size: 14px;
