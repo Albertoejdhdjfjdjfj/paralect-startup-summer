@@ -1,20 +1,35 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import logo from '../../assets/images/logo.svg';
 import './Header.css';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const isActive = (path) => {
+    if (location.pathname === path) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <header>
-      <h1>
-        <img src={logo} /> Jobored{' '}
-      </h1>
+      <div>
+        <img src={logo} />
+        <h1>Jobored</h1>
+      </div>
       <nav>
         <div>
-          <NavLink exact to="/">
+          <a className={isActive('/') ? 'active_link' : ''} onClick={() => navigate('/')}>
             Поиск Вакансий
-          </NavLink>
-          <NavLink to="/favorites">Избранное</NavLink>
+          </a>
+          <a
+            className={isActive('/favorites') ? 'active_link' : ''}
+            onClick={() => navigate('/favorites')}
+          >
+            Избранное
+          </a>
         </div>
       </nav>
     </header>

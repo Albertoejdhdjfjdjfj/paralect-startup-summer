@@ -80,13 +80,6 @@ select {
   font-weight: 400;
   font-size: 14px;
 }
-.unchecked {
-  color: var(--grey-500);
-}
-
-.unchecked > option {
-  color: var(--black);
-}
 
 .filter > div > button {
   margin-top: 20px;

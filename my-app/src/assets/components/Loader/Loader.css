@@ -18,18 +18,24 @@
   --blue-300: #b7d6ff;
   --blue-200: #c9e0ff;
   --blue-100: #deecff;
+  --radius-20: 20px;
+  --radius-8: 8px;
 }
 
-.vacancies_page {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+.loader {
+  border: 16px solid var(--grey-100);
+  border-top: 16px solid var(--blue-500);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
-.search__cards {
-  width: 773px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: center;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

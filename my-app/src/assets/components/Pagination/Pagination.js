@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 import { setNumPage } from '../../../redux/actions/actions';
 import './Pagination.css';
 
-const Pagination = () => {
+const Pagination = ({ length }) => {
   const [page, setPage] = useState(1);
   const [right, setRight] = useState(0);
-  const length=500;
+  const [num, setNum] = useState(1);
   const dispatch = useDispatch();
 
   const handlePage = (page) => {
@@ -17,7 +17,7 @@ const Pagination = () => {
   };
 
   const handleButtonPlus = () => {
-    if (right < (length - 3) * 40) setRight(right + 40);
+    if (right < (length - (num + 1) * 3) * 40) setRight(right + 40);
   };
 
   const handleButtonMinus = () => {
@@ -26,6 +26,7 @@ const Pagination = () => {
 
   useEffect(() => {
     dispatch(setNumPage(1));
+    length / 4 < 1 ? '' : setNum(length / 4);
   }, []);
 
   return (
@@ -34,7 +35,7 @@ const Pagination = () => {
       <span>
         <div style={{ right: `${right}px` }}>
           <div>
-            {Array.from({ length: length }, (_, i) => (
+            {Array.from({ length: num }, (_, i) => (
               <div
                 onClick={() => handlePage(i + 1)}
                 className={page === i + 1 ? 'active_page' : ''}

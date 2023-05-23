@@ -28,16 +28,26 @@ header {
   align-items: center;
 }
 
-header > h1 {
-  width: 141px;
+header > div {
+  width: 30%;
   height: 36px;
   display: flex;
-  margin-left: 162px;
+}
+
+header > div > img {
+  margin-left: 40%;
+}
+
+header > div > h1 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  margin-right: 12px;
 }
 
 header > nav {
-  width: 100%;
-  position: absolute;
+  width: 40%;
   display: flex;
   justify-content: center;
 }
@@ -53,6 +63,6 @@ header > nav > div > a {
   color: var(--black);
 }
 
-.active_route {
+.active_link {
   color: var(--blue-500);
 }

@@ -28,6 +28,7 @@
   width: 192px;
   height: 32px;
   display: flex;
+  margin-top: 40px;
   justify-content: space-between;
 }
 
@@ -42,7 +43,7 @@
 }
 
 .pagination > span {
-  width: 112px;
+  max-width: 112px;
   height: 32px;
   overflow: hidden;
 }

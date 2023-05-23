@@ -8,6 +8,7 @@ import './VacancyPage.css';
 const VacancyPage = () => {
   const [vacancy, setVacancy] = useVacancy();
   const [favorites, addFavorites, deleteFavorites] = useLocalStorage();
+
   useEffect(() => {
     setVacancy();
   }, []);

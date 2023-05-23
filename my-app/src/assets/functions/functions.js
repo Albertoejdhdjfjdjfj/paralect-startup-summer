@@ -36,7 +36,7 @@ export async function getBranches() {
   return await data.json();
 }
 
-export async function getVacancies(filter, search, numPage = 1) {
+export async function getVacancies(filter, search, numPage) {
   const { branch, salaryFrom, salaryTo } = filter;
   const data = await fetch(
     host +

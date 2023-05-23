@@ -20,7 +20,8 @@ export function useVacancy() {
 }
 
 export function useLocalStorage(arrayName = 'favorites') {
-  const [array, setArray] = useState(JSON.parse(localStorage.getItem(arrayName)) || []);
+  const data = JSON.parse(localStorage.getItem(arrayName));
+  const [array, setArray] = useState(data || []);
 
   const addElement = (el) => {
     const newArray = [...array, el];
@@ -35,4 +36,40 @@ export function useLocalStorage(arrayName = 'favorites') {
   };
 
   return [array, addElement, deleteElement];
+}
+
+export function useLocalStoragePagination(limit, numPage = 1, arrayName = 'favorites') {
+  const data = JSON.parse(localStorage.getItem(arrayName));
+  const start = (numPage - 1) * limit;
+  const end = start + limit;
+
+  const [page, setPage] = useState(data ? data.slice(start, end) : []);
+
+  const handlePage = (num) => {
+    const start = (num - 1) * limit;
+    const end = start + limit;
+    setPage(data ? data.slice(start, end) : []);
+  };
+
+  return [page, handlePage];
+}
+
+export function useSalaryInput(defaultvalue = null, step = 1) {
+  const [value, setValue] = useState(defaultvalue);
+  const addValue = () => {
+    setValue(value === null ? step : value + step);
+  };
+
+  const subValue = () => {
+    const sub = value - step;
+    if (sub >= 0 && value !== null) {
+      setValue(sub);
+    }
+  };
+
+  const changeValue = (val) => {
+    setValue(val);
+  };
+
+  return [value, addValue, subValue, changeValue];
 }

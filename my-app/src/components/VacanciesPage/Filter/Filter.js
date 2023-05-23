@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter, resetAll } from '../../../redux/actions/actions';
+import { setFilter, resetAll, fetchBranches, fetchVacancies } from '../../../redux/actions/actions';
+import Select from '../../../assets/components/Select/Select';
+import SalaryFrom from '../../../assets/components/Salary/SalaryFrom';
 import reset from '../../../assets/images/reset.svg';
 import './Filter.css';
 
 const Filter = () => {
-  const [branch, setBranch] = useState('');
-  const [salaryFrom, setSalaryFrom] = useState(null);
-  const [salaryTo, setSalaryTo] = useState(null);
-
+  const filter = useSelector((state) => state.filter);
+  const search = useSelector((state) => state.search);
   const dispatch = useDispatch();
-  const branches = useSelector((state) => state.branches);
-
-  const applyFilters = () => {
-    dispatch(setFilter({ branch: branch, salaryFrom: salaryFrom, salaryTo: salaryTo }));
-  };
-
   const cleanFilters = () => {
-    setBranch('');
-    setSalaryFrom(null);
-    setSalaryTo(null);
     dispatch(resetAll());
-    document.querySelector('.filter select').value = 'option1';
-    document.querySelectorAll('.filter input').forEach((input) => (input.value = ''));
   };
+
+  useEffect(() => {
+    dispatch(fetchBranches());
+  }, []);
 
   return (
     <div className="filter">
@@ -35,24 +28,11 @@ const Filter = () => {
       </span>
       <div>
         <span>Отрасль</span>
-        <select
-          defaultValue="option1"
-          className={branch === '' ? 'unchecked' : ''}
-          onChange={(e) => setBranch(e.target.value)}
-        >
-          <option hidden value="option1">
-            Выберете отрасль
-          </option>
-          {branches.map((item) => (
-            <option key={item.key} value={item.key}>
-              {item.title_rus}
-            </option>
-          ))}
-        </select>
+        <Select />
         <span>Оклад</span>
-        <input onChange={(e) => setSalaryFrom(e.target.value)} placeholder="От" type="number" />
+        <SalaryFrom />
         <input onChange={(e) => setSalaryTo(e.target.value)} placeholder="До" type="number" />
-        <button onClick={applyFilters}>Применить</button>
+        <button onClick={() => dispatch(fetchVacancies(search, filter, 1))}>Применить</button>
       </div>
     </div>
   );

@@ -26,8 +26,8 @@ const VacanciesPage = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchVacancies({ filter: filter, search: search, page: page }));
-  }, [page, filter, search]);
+    dispatch(fetchVacancies({ filter: filter, search: search, numPage: page }));
+  }, [page, search]);
 
   return (
     <div className="vacancies_page">
@@ -35,7 +35,7 @@ const VacanciesPage = () => {
       <div className="search__cards">
         <Search />
         <Vacancies data={vacancies} />
-        <Pagination/>
+        <Pagination length={500} />
       </div>
     </div>
   );
