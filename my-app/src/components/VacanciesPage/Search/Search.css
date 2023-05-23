@@ -76,7 +76,7 @@ body {
   font-size: 14px;
 }
 
-.search>button:hover{
+.search > button:hover {
   background-color: var(--blue-400);
 }
 
@@ -130,7 +130,7 @@ body {
   font-size: 14px;
 }
 
-.focus_search>button:hover{
+.focus_search > button:hover {
   background-color: var(--blue-400);
 }
 
