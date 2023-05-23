@@ -9,7 +9,7 @@ const Header = () => {
   const isActive = (path) => {
     if (location.pathname === path) {
       return true;
-    }
+    } 
     return false;
   };
 
@@ -20,7 +20,6 @@ const Header = () => {
         <h1>Jobored</h1>
       </div>
       <nav>
-        <div>
           <a className={isActive('/') ? 'active_link' : ''} onClick={() => navigate('/')}>
             Поиск Вакансий
           </a>
@@ -30,8 +29,10 @@ const Header = () => {
           >
             Избранное
           </a>
-        </div>
       </nav>
+      <div>
+        
+      </div>
     </header>
   );
 };

@@ -3,8 +3,8 @@ import './Loader.css';
 
 const Loader = () => {
   return (
-    <div>
-      <div class="loader"></div>
+    <div className='loader_wrapper'>
+      <div className="loader"></div>
     </div>
   );
 };

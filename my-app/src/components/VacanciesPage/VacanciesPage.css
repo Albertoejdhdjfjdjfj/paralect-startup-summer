@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&family=Poppins:wght@600&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color:  #F7F7F8;
 }
 
 :root {
@@ -18,12 +24,17 @@
   --blue-300: #b7d6ff;
   --blue-200: #c9e0ff;
   --blue-100: #deecff;
+  --radius-20: 20px;
+  --radius-8: 8px;
 }
 
 .vacancies_page {
   width: 100%;
+  padding: 0 11.25vw 0 11.25vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  background-color:  #F7F7F8;
+  padding-bottom: 44px;
 }
 
 .search__cards {
@@ -32,4 +43,24 @@
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
+}
+
+.search__cards>.vacancies >div {
+  max-width: 53.6vw;
+}
+
+@media (max-width: 900px){
+  .vacancies_page {
+    flex-direction: column;
+    padding: 0 10px 44px 10px;
+  }
+  
+  .search__cards {
+    width: 100%;
+  }
+
+  .search__cards>.vacancies >div {
+    max-width: 100%;
+  }
+  
 }

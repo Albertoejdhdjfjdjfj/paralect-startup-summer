@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&family=Poppins:wght@600&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter';
-  font-style: normal;
+}
+
+body{
+  background-color:  #F7F7F8;
 }
 
 :root {
@@ -26,21 +30,27 @@
 
 .vacancies {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .vacancies > div {
-  width: 100%;
-  height: 137px;
+  width: 773px;
   padding: 24px 24px 24px 24px;
+  background-color: var(--white);
+  border: 1px solid var(--grey-200);
+border-radius: 12px;
+margin-top: 16px;
 }
 
 .vacancies > div > p {
   width: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 .vacancies > div > p > span {
+  width: 100%;
   font-weight: 600;
   font-size: 20px;
   color: var(--blue-500);
@@ -78,7 +88,7 @@
 }
 
 .vacancies > div > div > span {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -103,4 +113,44 @@
   margin-left: 11px;
   font-weight: 400;
   font-size: 16px;
+}
+
+@media(max-width:900px){
+
+  .vacancies > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    margin-top: 12px;
+  }
+  
+  .vacancies > div{
+     width:100%;
+  }
+
+  .vacancies > div > div > img {
+    display: none;
+  }
+  
+  .vacancies > div > div > p {
+    margin-top: 10px;
+  }
+  
+  .vacancies > div > span {
+    margin-top: 12px;
+    display: flex;
+  }
+  
+  .vacancies > div > span > img {
+    width: 13px;
+    height: 16px;
+  }
+  
+  .vacancies > div > span > p {
+    margin-left: 11px;
+    font-weight: 400;
+    font-size: 16px;
+  } 
+  
 }

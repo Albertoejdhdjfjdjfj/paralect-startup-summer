@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&family=Poppins:wght@600&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color:  #F7F7F8;
 }
 
 :root {
@@ -21,19 +27,21 @@
   --radius-20: 20px;
   --radius-8: 8px;
 }
-
 .search {
+  margin-top: 40px;
   width: 100%;
   height: 48px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-8);
   background-color: var(--white);
   display: flex;
   align-items: center;
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
 }
 
 .search > img {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   margin-left: 14px;
 }
 
@@ -41,7 +49,9 @@
   height: 21px;
   margin-left: 9px;
   border: none;
-  width: 100%;
+  width: 80%;
+  font-weight: 500;
+font-size: 14px;
 }
 
 .search > input:active,
@@ -59,4 +69,69 @@
   border: none;
   background-color: var(--blue-500);
   color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+} 
+
+.focus_search {
+  margin-top: 40px;
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-8);
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--blue-500);
+  border-radius: 8px;
+}
+
+.focus_search > img {
+  width: 16px;
+  height: 16px;
+  margin-left: 14px;
+}
+
+.focus_search > input {
+  height: 21px;
+  margin-left: 9px;
+  border: none;
+  width: 80%;
+  font-weight: 500;
+font-size: 14px;
+}
+
+.focus_search > input:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.focus_search > button {
+  width: 83px;
+  height: 32px;
+  margin: 0 12px 0 12px;
+  border-radius: var(--radius-8);
+  border: none;
+  background-color: var(--blue-500);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+} 
+
+@media(max-width:900px){
+  .search {
+    margin-top: 16px;
+  }
+
+  .focus_search{
+    margin-top: 16px;
+  }
+
 }

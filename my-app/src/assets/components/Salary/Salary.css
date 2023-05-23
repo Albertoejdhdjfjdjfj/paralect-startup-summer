@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&family=Poppins:wght@600&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter';
-  font-style: normal;
+}
+
+body{
+  background-color:  #F7F7F8;
 }
 
 :root {
@@ -31,6 +35,7 @@
 }
 
 .input > input {
+  width: 100%;
   border: none;
   outline: none;
 }
@@ -73,6 +78,7 @@
 }
 
 .focus_input > input {
+  width: 100%;
   border: none;
   outline: none;
   caret-color: var(--blue-500);
@@ -103,4 +109,12 @@
   justify-content: space-between;
   width: 12px;
   height: 26px;
+}
+
+@media(max-width:900px){
+  .input,.focus_input{
+    width: 100%;
+  }
+
+
 }

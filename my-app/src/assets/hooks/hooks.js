@@ -38,6 +38,8 @@ export function useLocalStorage(arrayName = 'favorites') {
   return [array, addElement, deleteElement];
 }
 
+
+
 export function useLocalStoragePagination(limit, numPage = 1, arrayName = 'favorites') {
   const data = JSON.parse(localStorage.getItem(arrayName));
   const start = (numPage - 1) * limit;

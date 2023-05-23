@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&family=Poppins:wght@600&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color:  #F7F7F8;
 }
 
 :root {
@@ -20,6 +26,11 @@
   --blue-100: #deecff;
   --radius-20: 20px;
   --radius-8: 8px;
+}
+
+.loader_wrapper{
+  display: flex;
+  justify-content: center;
 }
 
 .loader {

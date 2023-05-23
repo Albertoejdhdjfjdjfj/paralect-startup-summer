@@ -22,9 +22,9 @@ const Select = () => {
 
   return (
     <div className="select">
-      <div className={active ? 'active_select_field' : '' + ' select_field'}>
+      <div onClick={changeActive} className={active ? 'active_select_field' : 'select_field'}>
         {filter.branch === '' ? <p className="default_option">Выберете отрасль </p> : branchName}
-        <img onClick={changeActive} src={active ? arrow_up : arrow_down} />
+        <img src={active ? arrow_up : arrow_down} />
       </div>
       {active && (
         <div className="select_options">

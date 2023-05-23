@@ -15,8 +15,8 @@ const initialState = {
   search: '',
   filter: {
     branch: '',
-    salary_from: null,
-    salary_to: null
+    salaryFrom: null,
+    salaryTo: null
   },
   page: 1,
   vacancies: false,

@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&family=Poppins:wght@600&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter';
-  font-style: normal;
+}
+
+body{
+  background-color:  #F7F7F8;
 }
 
 :root {
@@ -26,9 +30,14 @@
 
 .filter {
   max-width: 315px;
-  height: 360px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  background-color: var(--white);
+  margin-top: 40px;
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .filter > span {
@@ -44,7 +53,7 @@
 }
 
 .filter > span > button {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   background-color: var(--white);
   border: none;
@@ -69,18 +78,6 @@
   margin-top: 20px;
 }
 
-.filter > div > input,
-select {
-  margin-top: 8px;
-  padding: 0 0 0 12px;
-  width: 275px;
-  height: 42px;
-  border-radius: var(--radius-8);
-  border: 1px solid var(--grey-300);
-  font-weight: 400;
-  font-size: 14px;
-}
-
 .filter > div > button {
   margin-top: 20px;
   width: 275px;
@@ -91,4 +88,18 @@ select {
   border: none;
   font-weight: 500;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width:900px){
+  .filter {
+    max-width: 100%;
+  }
+  
+  .filter > div > button {
+    width: 100%;
+  }
+  
 }

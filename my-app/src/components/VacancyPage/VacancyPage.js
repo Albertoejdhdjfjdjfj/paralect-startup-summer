@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useVacancy, useLocalStorage } from '../../assets/hooks/hooks';
 import { parsePayments } from '../../assets/functions/functions';
+import Loader from '../../assets/components/Loader/Loader';
 import point from '../../assets/images/point.svg';
 import location from '../../assets/images/location.svg';
 import './VacancyPage.css';
@@ -13,10 +14,11 @@ const VacancyPage = () => {
     setVacancy();
   }, []);
 
-  return (
-    vacancy && (
+  return ( 
+     
       <div className="vacancy">
-        <div>
+        {!vacancy&&<Loader/>}
+       { vacancy && <div>
           <p>
             <span>{vacancy.profession}</span>
             <a
@@ -42,10 +44,12 @@ const VacancyPage = () => {
             <p>{vacancy.town.title}</p>
           </span>
         </div>
-        <span dangerouslySetInnerHTML={{ __html: vacancy.vacancyRichText }}></span>
+}
+        {vacancy&&<span dangerouslySetInnerHTML={{ __html: vacancy.vacancyRichText }}></span>}
+
       </div>
     )
-  );
+  
 };
 
 export default VacancyPage;

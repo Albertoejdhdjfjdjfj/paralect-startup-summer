@@ -5,7 +5,7 @@ import { useLocalStorage } from '../../assets/hooks/hooks';
 import Loader from '../../assets/components/Loader/Loader';
 import point from '../../assets/images/point.svg';
 import location from '../../assets/images/location.svg';
-import './Vacancies.css';
+import './Vacancies.css'; 
 
 const Vacancies = ({ data }) => {
   const [favorites, addFavorites, deleteFavorites] = useLocalStorage();

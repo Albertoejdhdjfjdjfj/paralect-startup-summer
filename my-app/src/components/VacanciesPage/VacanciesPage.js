@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchVacancies } from '../../redux/actions/actions';
 import { getToken } from '../../assets/functions/functions';
+import { resetAll } from '../../redux/actions/actions';
 import Cookies from 'js-cookie';
 import Pagination from '../../assets/components/Pagination/Pagination';
 import Search from './Search/Search';
@@ -22,6 +23,7 @@ const VacanciesPage = () => {
         await getToken();
       }
     }
+    dispatch(resetAll());
     checkToken();
   }, []);
 

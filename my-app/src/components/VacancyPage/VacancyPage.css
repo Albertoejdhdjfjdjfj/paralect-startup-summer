@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&family=Poppins:wght@600&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter';
-  font-style: normal;
+}
+
+body{
+  background-color:  #F7F7F8;
 }
 
 :root {
@@ -29,25 +33,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color:  #F7F7F8;
+  padding-bottom: 51px;
 }
 
 .vacancy > div {
-  width: 50%;
-  height: 157px;
-  padding: 24px 24px 24px 24px;
+  width: 773px;
+  padding: 24px;
   margin-top: 40px;
+  background-color: var(--white);
+  border: 1px solid var(--grey-200);
+border-radius: 12px;
 }
 
 .vacancy > div > p {
   width: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 .vacancy > div > p > span {
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--blue-500);
+  width: 100%;
+  font-weight: 700;
+  font-size: 28px;
 }
 
 .vacancy > div > p > img {
@@ -67,14 +74,14 @@
 
 .vacancy > div > div > span {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   align-items: center;
 }
 
 .vacancy > div > div > p {
+  font-size: 20px;
   font-weight: 400;
-  font-size: 16px;
 }
 
 .vacancy > div > span {
@@ -94,10 +101,59 @@
 }
 
 .vacancy > span {
-  width: 50%;
-  padding: 4px 24px 24px 24px;
+  width: 773px;
+  padding: 24px;
+  margin-top: 20px;
+  background-color: var(--white);
+  border: 1px solid var(--grey-200);
+border-radius: 12px;
 }
-.vacancy > span > p {
+.vacancy > span > p,ul {
   font-weight: 400;
   font-size: 16px;
+}
+
+@media(max-width:900px){
+  .vacancy {
+    padding: 0 10px 51px 10px;
+  }
+
+  .vacancy > span {
+    width: 100%;
+  }
+
+  .vacancy > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 12px;
+  }
+  
+  .vacancy > div{
+     width:100%;
+  }
+
+  .vacancy > div > div > img {
+    display: none;
+  }
+  
+  .vacancy > div > div > p {
+    margin-top: 10px;
+  }
+  
+  .vacancies > div > span {
+    margin-top: 12px;
+    display: flex;
+  }
+  
+  .vacancy > div > span > img {
+    width: 13px;
+    height: 16px;
+  }
+  
+  .vacancy > div > span > p {
+    margin-left: 11px;
+    font-weight: 400;
+    font-size: 16px;
+  } 
 }
