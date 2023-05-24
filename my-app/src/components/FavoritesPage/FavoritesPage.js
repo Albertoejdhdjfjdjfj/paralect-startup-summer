@@ -4,11 +4,12 @@ import { useLocalStorage, useLocalStoragePagination } from '../../assets/hooks/h
 import Pagination from '../../assets/components/Pagination/Pagination';
 import Vacancies from '../Vacancies/Vacancies';
 import EmptyFavorites from './helpers/EmptyFavorites';
+import { num_vacancies } from '../../assets/constans/constans';
 import './FavoritesPage.css';
 
 const FavoritesPage = () => {
   const [favorites] = useLocalStorage();
-  const [pageData, setPageData] = useLocalStoragePagination(4);
+  const [pageData, setPageData] = useLocalStoragePagination(num_vacancies);
   const page = useSelector((state) => state.page);
 
   useEffect(() => {

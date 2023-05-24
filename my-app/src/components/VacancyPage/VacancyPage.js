@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useVacancy, useLocalStorage } from '../../assets/hooks/hooks';
 import { parsePayments } from '../../assets/functions/functions';
@@ -21,13 +22,14 @@ const VacancyPage = () => {
   }, []);
 
   return (
-    <div className="vacancy">
+    <div className="vacancy" data-elem={`vacancy-${vacancy.id}`}>
       {!vacancy && <Loader />}
       {vacancy && (
         <div>
           <p>
             <span>{vacancy.profession}</span>
             <a
+              data-elem={`vacancy-${vacancy.id}-shortlist-button`}
               onClick={() =>
                 isActive(vacancy.id) ? deleteFavorites(vacancy) : addFavorites(vacancy)
               }

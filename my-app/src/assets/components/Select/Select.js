@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDisplay } from '../../hooks/hooks';
@@ -22,14 +23,12 @@ const Select = () => {
 
   return (
     <div className="select">
-      <div onClick={changeActive} className={active ? 'active_select_field' : 'select_field'}>
-        {filter.branch === '' ? (
-          <p data-elem="industry-select" className="default_option">
-            Выберете отрасль{' '}
-          </p>
-        ) : (
-          branchName
-        )}
+      <div
+        data-elem="industry-select"
+        onClick={changeActive}
+        className={active ? 'active_select_field' : 'select_field'}
+      >
+        {filter.branch === '' ? <p className="default_option">Выберете отрасль </p> : branchName}
         <img src={active ? arrow_up : arrow_down} />
       </div>
       {branches.length !== 0 && active && (
@@ -38,7 +37,8 @@ const Select = () => {
             <div
               className={item.key === filter.branch ? 'active_option' : ''}
               onClick={() => dispatchFilter(item)}
-              key={item.key}>
+              key={item.key}
+            >
               {item.title_rus}
             </div>
           ))}

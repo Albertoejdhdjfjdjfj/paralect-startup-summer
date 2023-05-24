@@ -6,7 +6,8 @@ import {
   client_secret,
   hr,
   x_secret_key,
-  x_api_app_id
+  x_api_app_id,
+  num_vacancies
 } from '../constans/constans';
 import Cookies from 'js-cookie';
 
@@ -40,7 +41,7 @@ export async function getVacancies(filter, search, numPage) {
   const { branch, salaryFrom, salaryTo } = filter;
   const data = await fetch(
     host +
-      `/2.0/vacancies/?page=${numPage}&count=4&no_agreement=1&published=1&keyword=${search}&payment_from=${salaryFrom}&payment_to=${salaryTo}&catalogues=${branch}`,
+      `/2.0/vacancies/?page=${numPage}&count=${num_vacancies}&no_agreement=1&published=1&keyword=${search}&payment_from=${salaryFrom}&payment_to=${salaryTo}&catalogues=${branch}`,
     {
       method: 'GET',
       headers: {

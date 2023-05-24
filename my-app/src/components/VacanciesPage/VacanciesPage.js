@@ -8,6 +8,7 @@ import Pagination from '../../assets/components/Pagination/Pagination';
 import Search from './Search/Search';
 import Filter from './Filter/Filter';
 import Vacancies from '../Vacancies/Vacancies';
+import { num_pages } from '../../assets/constans/constans';
 import './VacanciesPage.css';
 
 const VacanciesPage = () => {
@@ -38,7 +39,7 @@ const VacanciesPage = () => {
       <div className="search__cards">
         <Search />
         <Vacancies data={vacancies} />
-        <Pagination length={500} />
+        <Pagination length={num_pages} />
       </div>
     </div>
   );
