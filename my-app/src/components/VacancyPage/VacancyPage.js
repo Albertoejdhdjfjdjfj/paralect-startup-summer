@@ -9,6 +9,12 @@ import './VacancyPage.css';
 const VacancyPage = () => {
   const [vacancy, setVacancy] = useVacancy();
   const [favorites, addFavorites, deleteFavorites] = useLocalStorage();
+  const isActive = (id) => {
+    if (favorites.some((el) => el.id === id)) {
+      return true;
+    }
+    return false;
+  };
 
   useEffect(() => {
     setVacancy();
@@ -23,13 +29,9 @@ const VacancyPage = () => {
             <span>{vacancy.profession}</span>
             <a
               onClick={() =>
-                favorites.some((el) => el.id === vacancy.id)
-                  ? deleteFavorites(vacancy)
-                  : addFavorites(vacancy)
+                isActive(vacancy.id) ? deleteFavorites(vacancy) : addFavorites(vacancy)
               }
-              className={
-                favorites.some((el) => el.id === vacancy.id) ? 'active_vacancy' : 'unactive_vacancy'
-              }
+              className={isActive(vacancy.id) ? 'active_vacancy' : 'unactive_vacancy'}
             ></a>
           </p>
           <div>

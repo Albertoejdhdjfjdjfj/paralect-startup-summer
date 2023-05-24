@@ -10,6 +10,12 @@ import './Vacancies.css';
 const Vacancies = ({ data }) => {
   const [favorites, addFavorites, deleteFavorites] = useLocalStorage();
   const navigate = useNavigate();
+  const isActive = (id) => {
+    if (favorites.some((el) => el.id === id)) {
+      return true;
+    }
+    return false;
+  };
 
   return (
     <div className="vacancies">
@@ -21,14 +27,8 @@ const Vacancies = ({ data }) => {
               <span onClick={() => navigate(`/${item.id}`)}>{item.profession}</span>{' '}
               <a
                 data-elem={`vacancy-${item.id}-shortlist-button`}
-                onClick={() =>
-                  favorites.some((el) => el.id === item.id)
-                    ? deleteFavorites(item)
-                    : addFavorites(item)
-                }
-                className={
-                  favorites.some((el) => el.id === item.id) ? 'active_vacancy' : 'unactive_vacancy'
-                }
+                onClick={() => (isActive(item.id) ? deleteFavorites(item) : addFavorites(item))}
+                className={isActive(item.id) ? 'active_vacancy' : 'unactive_vacancy'}
               ></a>
             </p>
             <div>

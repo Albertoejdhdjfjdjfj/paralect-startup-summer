@@ -49,10 +49,11 @@ body {
 .vacancy > div > p {
   width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .vacancy > div > p > span {
-  width: 100%;
+  width: 90%;
   font-weight: 700;
   font-size: 28px;
 }
