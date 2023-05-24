@@ -9,7 +9,6 @@ import {
 import Select from '../../../assets/components/Select/Select';
 import SalaryFrom from '../../../assets/components/Salary/SalaryFrom';
 import SalaryTo from '../../../assets/components/Salary/SalaryTo';
-import reset from '../../../assets/images/reset.svg';
 import './Filter.css';
 
 const Filter = () => {
@@ -43,7 +42,7 @@ const Filter = () => {
       <span>
         <p>Фильтры</p>{' '}
         <button onClick={cleanFilters}>
-          Сбросить все <img src={reset} />
+          Сбросить все <a></a>
         </button>
       </span>
       <div>

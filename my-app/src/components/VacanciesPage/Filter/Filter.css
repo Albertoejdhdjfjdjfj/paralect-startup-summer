@@ -60,12 +60,29 @@ body {
   color: var(--grey-500);
   display: flex;
   align-items: center;
-  margin-right: 4px;
 }
 
-.filter > span > button > img {
+.filter > span > button > a {
   width: 16px;
   height: 16px;
+  margin-right: 4px;
+  background-image: url(../../../assets/images/reset.svg);
+}
+
+.filter > span > button:hover {
+  color: var(--blue-400);
+}
+
+.filter > span > button:hover > a {
+  background-image: url(../../../assets/images/reset_hover.svg);
+}
+
+.filter > span > button:active {
+  color: var(--blue-500);
+}
+
+.filter > span > button:active > a {
+  background-image: url(../../../assets/images/reset_click.svg);
 }
 
 .filter > div {

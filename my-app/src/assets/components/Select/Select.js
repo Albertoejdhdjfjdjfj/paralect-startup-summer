@@ -32,14 +32,13 @@ const Select = () => {
         )}
         <img src={active ? arrow_up : arrow_down} />
       </div>
-      {active && (
+      {branches.length !== 0 && active && (
         <div className="select_options">
           {branches.map((item) => (
             <div
               className={item.key === filter.branch ? 'active_option' : ''}
               onClick={() => dispatchFilter(item)}
-              key={item.key}
-            >
+              key={item.key}>
               {item.title_rus}
             </div>
           ))}

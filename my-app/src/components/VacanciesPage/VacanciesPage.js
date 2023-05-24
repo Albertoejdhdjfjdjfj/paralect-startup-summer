@@ -25,6 +25,7 @@ const VacanciesPage = () => {
     }
     dispatch(resetAll());
     checkToken();
+    dispatch(fetchVacancies({ filter: filter, search: search, numPage: page }));
   }, []);
 
   useEffect(() => {
